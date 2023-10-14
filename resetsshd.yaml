@@ -11,6 +11,3 @@
            line: "PermitRootLogin yes"
            state: present
            backup: yes
-           
-     notify:
-       - restart ssh
