@@ -1,10 +1,9 @@
 ---
- - hosts: all
-   gather_facts: no
-   become: true
-   become_user: root
+- hosts: all
+  become: true
+  become_user: root
    
-   tasks:
+  tasks:
    - name: Enable Root Login
      lineinfile:
            dest: /etc/ssh/sshd_config
@@ -15,9 +14,3 @@
            
      notify:
        - restart ssh
-
-   handlers:
-   - name: restart ssh
-     systemctl:
-       name: sshd
-       state: restarted
